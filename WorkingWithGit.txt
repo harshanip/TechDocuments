@@ -1,0 +1,17 @@
+
+Fork : https://guides.github.com/activities/forking/
+Set User name and password in repo. 
+ git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"	
+
+Only to this repo
+git config   user.email "perera.harshani@gmail.com"
+  git config  user.name "harshanip"
+
+
+git add index.html
+git push
+
+git commit -m "Test Commit for Fork" --dry-run
+
+
