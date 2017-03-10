@@ -1,0 +1,42 @@
+Initialized  a project 
+    npm init
+    
+Install express
+    npm install express --save
+    
+Set js file as start
+    edit package.json
+        "scripts": { "start" :"npde app.js" },
+Install bower
+    npm install -g bower //to use bower install ,
+
+Install packages using bower
+    bower install bootstrap --save
+    
+Change the location of bower packages 
+    1. Create a file .bowerrc
+    2. Add below content , " on both key & value
+        { "directory" : "public/lib"   }
+        
+Code Qualoty using JSHint /JSCS
+    Download files https://github.com/jonathanfmills/CodingStandards and copy .js* to root otherwise it gives error
+    
+
+Using gulp
+        install globaly ang then install locally as dev
+        sudo npm install -g gulp
+        npm install gulp --save-dev
+	
+     Install gulp related file
+	 	npm install --save-dev gulp-jshint gulp-jscs jshint-stylish jshint  
+		Create file gulpfile.js and add code run gulp style --if error occured , verify .jshintrc and .jscsrc files are in root folder
+		
+wired spp
+	npm install wiredep --save-dev
+	
+	<!-- bower:js --><!--endbower-->
+	
+	gulp inject -- to inject our css
+	npm install gulp-inject --save-dev
+	
+gulp-nodemon

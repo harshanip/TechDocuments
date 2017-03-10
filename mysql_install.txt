@@ -1,0 +1,3 @@
+Get deb package from http://dev.mysql.com/downloads/repo/apt/. 
+sudo apt-get install mysql-server
+sudo service mysql status

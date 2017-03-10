@@ -1,0 +1,11 @@
+Verify python version is higher than 2.6
+        python --version
+Download the bundle an unpack
+        curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+        unzip awscli-bundle.zip
+Install AWS CLI        
+        sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+Verify aws cli is working
+/usr/local/bin/aws --version
+
+Reference : http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-bundle-other-os

@@ -1,0 +1,6 @@
+curl -XPUT http://dn3uselasdbs01.ecollegeqa.net:9200/logstash-2017.03.08/_settings -d '{
+    "number_of_replicas": 0
+}'
+
+
+curl -XDELETE http://dn3uselasdbs01.ecollegeqa.net:9200/logstash-2016.12.[01-31]/
