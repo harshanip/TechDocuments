@@ -1,0 +1,17 @@
+Online Editors : https://jsfiddle.net/
+
+General html5 http://html5doctor.com/
+Mozilla https://developer.mozilla.org/en-US/
+
+
+Color Scheme https://coolors.co/
+https://randoma11y.com/#/?_k=lhldxg
+
+http://colours.neilorangepeel.com
+
+CSS Specificity :  http://cssspecificity.com/
+https://specificity.keegan.st/
+http://www.cssfontstack.com/
+https://css-tricks.com
+Using font face : https://css-tricks.com
+
