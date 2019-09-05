@@ -1,0 +1,2 @@
+curl -XPOST  http://10.169.161.152:8080/seer/activity/search-raw.json --header 'report-pw: awesometown' -d '{ "query" : { "bool" : { "must" : [ { "term" : { "generator.appId" : "harshani" } } ] } } }'
+

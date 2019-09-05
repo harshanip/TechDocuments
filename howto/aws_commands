@@ -1,0 +1,4 @@
+Remove folders :
+    aws s3 rm s3://pearson-nibiru-04-seer-emr/dev/sequencefiles/ --recursive --exclude "*" --include "2014*" 
+List directory : 
+    aws s3 ls s3://pearson-nibiru-04-seer-emr/stg/logs/  --recursive --page-size 10

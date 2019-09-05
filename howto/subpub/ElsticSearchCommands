@@ -1,0 +1,121 @@
+stg-use1b-pr-29-subpublog-01x00x00-0007
+
+curl -X POST "http://stg-use1d-pr-29-subpublog-01x00x00-0003.prv-openclass.com:9200/logstash-2016.07.[01-14]/_search?pretty=true" -d '
+  {
+    "query" : { "query_string" : {"query" : "*"} },
+    "facets" : {
+      "tags" : { "terms" : {"field" : "sub"} }
+    }
+  }
+'
+
+curl -XPOST "http://localhost:9200/sports/athlete/_search" -d'
+{
+   "size": 0, 
+   "aggregations": {
+      "the_name": {
+         "terms": {
+            "field": "sub",
+            "order": {
+               "rating_avg": "desc"
+            }
+         },
+         "aggregations": {
+            "rating_avg": {
+               "avg": {
+                  "field": "rating"
+               }
+            }
+         }
+      }
+   }
+}'
+ 
+curl -XPOST  "http://stg-use1d-pr-29-subpublog-01x00x00-0003.prv-openclass.com:9200/logstash-2016.07.[01-14]/_search?pretty=true" -d'
+{
+   "size": 0,
+   "aggs": {
+      "sport_count": {
+         "value_count": {
+            "field": "sub"
+         }
+      }
+   }
+}'
+
+ curl -XPOST 'http://10.198.6.235:9200/tincan_event/_search?pretty'  -d '{
+  "query": { "match": { "context.extensions.appId": "Mastering"} }
+}' 
+
+curl -XPOST 'http://10.198.6.235:9200/tincan_2016-08-01-00-00/_search?pretty'  -d '{ 
+ "filter": {
+                "bool": {
+                  "must": [
+                    {
+                      "range": {
+                        "stored": {
+                          "from": 1470025057597,
+                          "to": 1470025394714
+                        }
+                      }
+                    }
+                  }
+       },
+   "aggregations": {
+      "sport": {
+         "terms": {
+            "field": "context.extensions.appId"
+         }
+      }
+   }
+}'
+
+
+'
+curl -XPOST 'http://10.198.6.235:9200/tincan_event/_search?pretty'  -d '{
+   "size": 0,
+   "aggregations": {
+      "sport": {
+         "terms": {
+            "field": "context.extensions.appId"
+         }
+      }
+   }
+}'
+
+
+
+curl -XPOST "http://stg-use1d-pr-29-subpublog-01x00x00-0003.prv-openclass.com:9200/logstash-2016.06.[01-15]/_open
+curl -XPOST  "http://stg-use1d-pr-29-subpublog-01x00x00-0003.prv-openclass.com:9200/logstash-2016.07.[01-14]/_search?pretty=true" -d '
+{
+   "size": 0,
+   "aggregations": {
+      "sport": {
+         "terms": {
+            "field": "message_type"
+         }
+      }
+   }
+}'
+
+
+Allocate Shrds to a node 
+NODE="YOUR NODE NAME"
+IFS=$'\n'
+for line in $(curl -s 'localhost:9200/_cat/shards' | fgrep UNASSIGNED); do
+  INDEX=$(echo $line | (awk '{print $1}'))
+  SHARD=$(echo $line | (awk '{print $2}'))
+
+  curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
+     "commands": [
+        {
+            "allocate": {
+                "index": "'$INDEX'",
+                "shard": '$SHARD',
+                "node": "'$NODE'",
+                "allow_primary": true
+          }
+        }
+    ]
+  }'
+done

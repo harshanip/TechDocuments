@@ -1,0 +1,22 @@
+Thu Aug 11 05:42:58 UTC 2016
+Thu Aug 11 05:44:20 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   6695596         11013233        4317637         none
+test            seer-tincan                    1   6604240         10532301        3928061         none
+test            seer-tincan                    2   6910439         10890925        3980486         none
+test            seer-tincan                    3   6681768         10693309        4011541         none
+test            seer-tincan                    4   6790386         11129426        4339040         none
+Thu Aug 11 06:00:08 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   6695596         11013329        4317733         none
+test            seer-tincan                    1   6604240         10532324        3928084         none
+test            seer-tincan                    2   6910439         10890949        3980510         none
+test            seer-tincan                    3   6681768         10693315        4011547         none
+test            seer-tincan                    4   6790386         11129476        4339090         none
+Thu Aug 11 08:59:45 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   6695596         11021685        4326089         none
+test            seer-tincan                    1   6604240         10533616        3929376         none
+test            seer-tincan                    2   6910439         10893062        3982623         none
+test            seer-tincan                    3   6681768         10693769        4012001         none
+test            seer-tincan                    4   6790386         11137985        4347599         none

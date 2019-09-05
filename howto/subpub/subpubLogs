@@ -1,0 +1,174 @@
+| awk '{split($0, array, " ")} END{print length(array) }'
+echo "12|2undefined3|11" | awk '{split($0,a,"undefined"); print a[2]}'
+ ./prospero-print-all-subs | awk '{n=split($0,a,"undefined"); print a[n]}'
+
+/opt/prospero/sbin/prospero-print-all-subs  |awk '{n=split($0, array, " ")} END{print n }'
+/opt/prospero/sbin/prospero-print-all-subs  | awk '{n=split($0,a,"undefined"); print a[n]}'
+
+
+  {
+        "memory": 45360,
+        "message_stats":
+        {
+            "ack": 96508,
+            "ack_details":
+            {
+                "rate": 0
+            },
+            "deliver": 96518,
+            "deliver_details":
+            {
+                "rate": 0
+            },
+            "deliver_get": 96518,
+            "deliver_get_details":
+            {
+                "rate": 0
+            },
+            "publish": 96507,
+            "publish_details":
+            {
+                "rate": 0
+            },
+            "redeliver": 11,
+            "redeliver_details":
+            {
+                "rate": 0
+            }
+        },
+        "idle_since": "2016-07-24 18:42:34",
+        "policy": "HA",
+        "exclusive_consumer_tag": "",
+        "consumers": 18,
+        "slave_nodes":
+        [
+            "rabbit@sflrs01sc",
+            "rabbit@sflrs03sc",
+            "rabbit@sflrs04sc"
+        ],
+        "synchronised_slave_nodes":
+        [
+            "rabbit@sflrs04sc",
+            "rabbit@sflrs03sc",
+            "rabbit@sflrs01sc"
+        ],
+        "backing_queue_status":
+        {
+            "q1": 0,
+            "q2": 0,
+            "delta":
+            [
+                "delta",
+                "undefined",
+                0,
+                "undefined"
+            ],
+            "q3": 0,
+            "q4": 0,
+            "len": 0,
+            "pending_acks": 0,
+            "target_ram_count": "infinity",
+            "ram_msg_count": 0,
+            "ram_ack_count": 0,
+            "next_seq_id": 96508,
+            "persistent_count": 0,
+            "avg_ingress_rate": 0.01894333436820769,
+            "avg_egress_rate": 0.01894333436820769,
+            "avg_ack_ingress_rate": 0.01894333436820769,
+            "avg_ack_egress_rate": 0.01894333436820769,
+            "mirror_seen": 0,
+            "mirror_senders": 36
+        },
+        "status": "running",
+        "name": "Sub-00000cb9-27d8-c0a9-2d08-0f2fb2d01a67",
+        "vhost": "/",
+        "durable": true,
+        "auto_delete": false,
+        "arguments":
+        {
+        },
+        "node": "rabbit@sflrs02sc"
+    },
+    {
+        "memory": 45360,
+        "message_stats":
+        {
+            "ack": 5212,
+            "ack_details":
+            {
+                "rate": 0
+            },
+            "deliver": 5214,
+            "deliver_details":
+            {
+                "rate": 0
+            },
+            "deliver_get": 5214,
+            "deliver_get_details":
+            {
+                "rate": 0
+            },
+            "publish": 5212,
+            "publish_details":
+            {
+                "rate": 0
+            },
+            "redeliver": 2,
+            "redeliver_details":
+            {
+                "rate": 0
+            }
+        },
+        "idle_since": "2016-07-24 10:06:41",
+        "policy": "HA",
+        "exclusive_consumer_tag": "",
+        "consumers": 18,
+        "slave_nodes":
+        [
+            "rabbit@sflrs01sc",
+            "rabbit@sflrs03sc",
+            "rabbit@sflrs04sc"
+        ],
+        "synchronised_slave_nodes":
+        [
+            "rabbit@sflrs04sc",
+            "rabbit@sflrs03sc",
+            "rabbit@sflrs01sc"
+        ],
+        "backing_queue_status":
+        {
+            "q1": 0,
+            "q2": 0,
+            "delta":
+            [
+                "delta",
+                "undefined",
+                0,
+                "undefined"
+            ],
+            "q3": 0,
+            "q4": 0,
+            "len": 0,
+            "pending_acks": 0,
+            "target_ram_count": "infinity",
+            "ram_msg_count": 0,
+            "ram_ack_count": 0,
+            "next_seq_id": 5212,
+            "persistent_count": 0,
+            "avg_ingress_rate": 0.00013083535492339058,
+            "avg_egress_rate": 0.00013083535492339058,
+            "avg_ack_ingress_rate": 0.00013083535492339058,
+            "avg_ack_egress_rate": 0.00013083535492339058,
+            "mirror_seen": 0,
+            "mirror_senders": 36
+        },
+        "status": "running",
+        "name": "Sub-00000cb9-27d8-c0c9-2d08-0f2fb2d01a67",
+        "vhost": "/",
+        "durable": true,
+        "auto_delete": false,
+        "arguments":
+        {
+        },
+        "node": "rabbit@sflrs02sc"
+    },

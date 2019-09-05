@@ -1,0 +1,20 @@
+machine 10.198.14.125
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+sudo mysql_install_db
+
+CREATE DATABASE tincan;
+CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'strongpassword';
+GRANT ALL ON tincan.* TO 'testuser'@'localhost';
+
+
+
+
+
+ CREATE TABLE rabbitQueue(
+id  int(11) NOT NULL AUTO_INCREMENT,
+activity longtext NOT NULL,
+  PRIMARY KEY (id)
+)  
+ 

@@ -1,0 +1,79 @@
+{
+  "classes": {
+    "graphite": {
+      "gr_storage_aggregation_rules": {
+        "gauge": {
+          "factor": 0,
+          "method": "average",
+          "pattern": "\\.gauge$"
+        },
+        "stats": {
+          "factor": 0,
+          "method": "average",
+          "pattern": "^stats.*"
+        },
+        "stats_counts": {
+          "factor": 0,
+          "method": "sum",
+          "pattern": "^stats_counts\\..*"
+        },
+        "sum": {
+          "factor": 0,
+          "method": "sum",
+          "pattern": "\\.count$"
+        },
+        "time": {
+          "factor": 0,
+          "method": "average",
+          "pattern": "\\.time$"
+        }
+      },
+      "gr_storage_schemas": [
+        {
+          "name": "stats",
+          "pattern": "^stats.*",
+          "retentions": "10:2160,60:10080,600:262974"
+        },
+        {
+          "name": "default",
+          "pattern": ".*",
+          "retentions": "10:2160,60:10080,600:262974"
+        }
+      ],
+      "gr_use_whitelist": "True"
+    },
+    "redis": {
+      "conf_dir": "/mnt/redis"
+    },
+    "statsd": {
+      "backends": [
+        "./backends/graphite",
+        "/opt/backends/statsd-redis-backend"
+      ],
+      "config": {
+        "countKey": "\"seerCounts\"",
+        "dateTimeKey": "\"dateTime\"",
+        "deleteIdleStats": true,
+        "redisHost": "\"localhost\"",
+        "redisPort": 6397
+      },
+      "graphiteserver": "localhost"
+    }
+  },
+  "environment": "v8",
+  "parameters": {}
+}
+
+  32  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+   33  apt-get install nodejs
+
+10.199.26.102
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+Alternatively, for Node.js v6:
+
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+

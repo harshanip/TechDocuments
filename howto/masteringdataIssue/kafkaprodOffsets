@@ -1,0 +1,48 @@
+10.198.14.145
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         105079429       103818639       none
+test            seer-tincan                    1   1225956         104250679       103024723       none
+test            seer-tincan                    2   1293562         104587200       103293638       none
+test            seer-tincan                    3   1274995         105352562       104077567       none
+test            seer-tincan                    4   1259670         104778208       103518538       none
+
+10.198.14.145
+Thu Sep  1 04:47:19 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         105668818       104408028       none
+test            seer-tincan                    1   1225956         104877923       103651967       none
+test            seer-tincan                    2   1293562         105222208       103928646       none
+test            seer-tincan                    3   1274995         105903331       104628336       none
+test            seer-tincan                    4   1259670         105340776       104081106       none
+10.198.14.145
+Thu Sep  1 10:51:01 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         105734832       104474042       none
+test            seer-tincan                    1   1225956         104951092       103725136       none
+test            seer-tincan                    2   1293562         105296982       104003420       none
+test            seer-tincan                    3   1274995         105968142       104693147       none
+test            seer-tincan                    4   1259670         105410789       104151119       none
+
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer-tincan_1 104877923 104951092 1
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer-tincan_2 105222208 105296982 2
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer-tincan_3 105903331 105968142 3
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer-tincan_4 105340776 105410789 4
+
+10.198.14.145
+Fri Sep  2 11:45:09 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         106402942       105142152       none
+test            seer-tincan                    1   1225956         105631289       104405333       none
+test            seer-tincan                    2   1293562         105956260       104662698       none
+test            seer-tincan                    3   1274995         106624439       105349444       none
+test            seer-tincan                    4   1259670         106085050       104825380       none
+
+10.198.14.145
+Mon Sep  5 06:26:50 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         107894839       106634049       none
+test            seer-tincan                    1   1225956         107124922       105898966       none
+test            seer-tincan                    2   1293562         107485935       106192373       none
+test            seer-tincan                    3   1274995         108067698       106792703       none
+test            seer-tincan                    4   1259670         107569627       106309957       none
+

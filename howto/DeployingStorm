@@ -1,0 +1,14 @@
+sudo apt-get install python-dev
+sudo apt-get install python-pip
+sudo pip install -i http://pypi.prv-prsn.com/simple/ tugboat --trusted-host pypi.prv-prsn.com
+Issue : /usr/bin/fab cannot be found
+        1.  pip install fabric or sudo apt-get install fabric
+        2. If issue stil occured sheck if fab is in different folder /usr/local/bin ??
+        
+Issue : An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. 
+                This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of 
+                Python to solve this. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+            sudo pip install pyopenssl ndg-httpsclient pyasn1
+            
+            
+

@@ -1,0 +1,96 @@
+CREATE DATABASE subpub;
+CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'test623';
+GRANT ALL ON subpub.* TO 'testuser'@'localhost';
+
+create table rabbit_error_q_details (
+q_name varchar(50),
+r_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+create table count_by_principal (
+principal varchar(20),
+r_date DATE,
+count INT(10),
+primary key(principal,r_date)
+);
+
+
+create table rabbit_q_details (
+q_name varchar(50),
+r_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+q_length INTEGER(10)
+);
+
+create table message_count (
+r_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP PRIMARY KEY,
+count integer(10)
+);
+
+GRANT ALL PRIVILEGES
+ON database.*
+TO 'user'@'yourremotehost'
+IDENTIFIED BY 'newpassword';
+
+apt-get install python-dev libmysqlclient-dev
+pip install MySQL-python
+10.198.25.164
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+sudo mysql_install_db
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+https://docs.python.org/3/library/json.html
+http://learnpythonthehardway.org/book/ex32.html
+http://dev.mysql.com/doc/refman/5.7/en/create-table.html
+https://dev.mysql.com/doc/refman/5.5/en/timestamp-initialization.html
+http://zetcode.com/db/mysqlpython/
+https://dev.mysql.com/doc/connector-python/en/connector-python-tutorial-cursorbuffered.html
+https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html
+https://docs.python.org/3/tutorial/errors.html 
+Set up mysql pythn driver => http://codeinthehole.com/writing/how-to-set-up-mysql-for-python-on-ubuntu/
+
+curl -i -u guest:guest -H "content-type:application/json" -XGET http://sflrs01sc.ecollegeqa.net:15672/api/queues
+curl -i -u guest:guest -H "content-type:application/json" -XGET http://sflrs01c.ecollege.net:15672/api/queues
+http://docs.python-requests.org/en/master/
+pip install requests
+
+import requests
+
+response = requests.get('http://sflrs01sc.ecollegeqa.net:15672/api/queues',
+                         auth=('guest', 'guest'))
+data = response.json()
+
+http://sflrs01c.ecollege.net:15672
+
+
+roverview = requests.get('http://sflrs01sc.ecollegeqa.net:15672/api/overview',
+                         auth=('guest', 'guest'))
+overview = roverview.json()
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import requests
+response = requests.get('http://sflrs01c.ecollege.net:15672/api/queues',
+                         auth=('guest', 'guest'))
+data = response.json()
+
+for row in data:
+	print row[0]["name"] data[0]["messages"]
+
+
+
+for row in data:
+	qName = data[0]["name"]
+	queue = requests.get('http://sflrs01c.ecollege.net:15672/api/queues/%2f/Sub-00000d65-98c6-eeff-f21d-11083d711591',auth=('guest', 'guest')).json()
+	print queue
+
+GRANT ALL ON subpub.* TO 'testuser'@'localhost'
+
+ 
+queue = requests.get('http://sflrs01c.ecollege.net:15672/api/queues/%2f/Sub-00000d65-98c6-eeff-f21d-11083d711591',auth=('guest', 'guest')).json()
+print queue
+
+
+

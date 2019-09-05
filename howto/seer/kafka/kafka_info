@@ -1,0 +1,49 @@
+ {
+  "java": {},
+  "kafka::server": {
+    "destination_brokers": {
+      "dev-use1b-pr-04-firehose-kamq-0017 ": {
+        "id": "0",
+        "port": "9092"
+      },
+      "dev-use1c-pr-04-firehose-kamq-0011": {
+        "id": "1",
+        "port": "9092"
+      } 
+    },
+    "log_dirs": "/data/kafka",
+    "log_flush_interval_ms": 1000,
+    "log_retention_hours": 1080,
+    "nofiles_ulimit": "unlimited",
+    "zookeeper_hosts": [   "10.199.254.26:2181",  "10.199.253.14:2181"]
+  }
+}
+  "java": {
+    "release": "7",
+    "vendor": "oracle",
+    "version": "7.60*"
+  },
+  "zookeeper": {
+    "cluster_nodes": [
+      {
+        "host": "10.199.254.26",
+        "id": "1"
+      },
+      {
+        "host": "10.199.253.14",
+        "id": "2"
+      } 
+    ],
+    "id": "2",
+    "version": "3.4.6"
+  }
+
+{"topics": [{"topic": "seer-activity"} ], "version":1 } 
+
+{"environment": "v8"}
+
+/kafka-create-topic.sh --zookeeper  10.199.253.14 --replica  2 --partition 5 --topic seer-activity
+
+./kafka-reassign-partitions.sh --zookeeper 10.198.14.80 --manual-assignment-json-file  partitions/activity4.json --execute
+
+./kafka-reassign-partitions.sh --zookeeper 10.198.14.80 --status-check-json-file partitions/activity4.json

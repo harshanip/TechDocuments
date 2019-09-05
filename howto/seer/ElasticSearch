@@ -1,0 +1,88 @@
+{
+  "persistent" : { },
+  "transient" : {
+    "cluster" : {
+      "routing" : {
+        "allocation" : {
+          "exclude" : {
+            "_ip" : "10.198.2.134,10.198.4.97,10.198.7.186,10.198.4.206"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+curl -XPUT 10.198.14.47:9200/_cluster/settings -d '
+{
+  "persistent" : {    "cluster.routing.allocation.exclud._ip" : "10.198.2.134,10.198.4.97,10.198.7.186,10.198.4.206",
+"cluster.routing.allocation.balance.threshold" : 2.0
+} 
+        }'
+     
+
+curl -XPUT 10.198.14.47:9200/_cluster/settings -d '{
+  "transient" :{
+      "cluster.routing.allocation.exclude._ip" : "10.198.2.134,10.198.4.97,10.198.7.186,10.198.4.206"
+   }
+}';echo
+
+
+curl -XPOST '10.199.16.186:9200/_cluster/reroute' -d '{"commands": [
+    {"allocate": {
+        "index": "tincan_2015-07-28-00-00", 
+        "shard": 1, 
+        "node": "10.199.16.167",
+        "allow_primary": true }
+    }]
+}'
+curl -XPUT 10.199.244.245:9200/_cluster/settings -d '{
+"transient" :{
+"cluster.routing.allocation.exclude._ip" : "10.199.244.245"
+}
+}';
+
+curl -XPUT 10.198.14.47:9200/_cluster/settings -d '{
+"transient" :{
+"cluster.routing.allocation.balance.threshold" : "5.0f"
+}
+}';
+
+curl  -XPOST http://10.199.244.245:9200/activity_2016-05-[01-31]-00-00/_open;curl   http://10.199.244.245:9200/_cluster/health; echo '\n';
+ 
+
+
+
+{
+  "classes": {
+    "elasticsearch::nibiru": {
+      "config": {
+        "cloud": {
+          "aws": {
+            "region": "us-west-2"
+          }
+        },
+        "cluster": {
+          "name": "seerelasticsearch"
+        },
+        "discovery": {
+          "ec2": {
+            "tag": {
+              "app_name": "seerelasticsearch",
+              "team_id": "04"
+            }
+          },
+          "type": "ec2"
+        }
+      }
+    },
+    "java": {
+      "release": "7",
+      "vendor": "oracle",
+      "version": "7.60*"
+    }
+  },
+  "environment": "v68",
+  "parameters": {}
+}

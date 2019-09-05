@@ -1,0 +1,83 @@
+Recently I wanted to create a web server , that sends simple response to rest call it gets. Using python we can create a web server withing few minutes.
+
+ 
+
+These are the steps to install python and related packages in Ubuntu
+
+ 
+
+    Install python
+
+ 
+
+    sudo apt-get install python
+
+ 
+
+    Install Easy Install for python.( Easy Install is a python module (easy_install) bundled with setuptools that lets you automatically download, build, install, and manage Python packages.)
+
+ 
+
+    wget http://peak.telecommunity.com/dist/ez_setup.py
+    sudo python ez_setup.py
+
+ 
+
+    Install web.py . (web.py is a web framework for Python )
+
+ 
+
+    sudo easy_install web.py
+
+ 
+
+ 
+
+Copy below code to a file with .py extension and run it.
+
+ 
+
+ 
+#!/usr/bin/env python  
+import web  
+  
+  
+urls = (  
+    '/', 'successfull_delivery',  
+)  
+  
+  
+app = web.application(urls, globals())  
+  
+  
+class successfull_delivery:          
+    def POST(self):  
+        output = 'POST';  
+        print web.data()  
+        return output   
+                
+    def GET(self):  
+        output = 'GET';  
+        print web.data()  
+        return output  
+  
+  
+if __name__ == "__main__":  
+    app.run()  
+
+
+ 
+
+Change the file to executable
+
+ 
+
+    chmod 777 <FileName>
+
+ 
+
+ 
+
+To run server in specific port
+
+    ./<filename> <port>

@@ -1,0 +1,7 @@
+seer_tincan_2 103863279 104587200 2
+grep '"appId":"Mastering"' seer-tincan_0 |awk '{n = split($0,a,","); print a[n],a[n-1]}'|sort >>0_ka_msgId
+grep '"appId":"Mastering"' seer-tincan_1 |awk '{n = split($0,a,","); print a[n],a[n-1]}'|sort >>0_ka_msgId
+grep '"appId":"Mastering"' seer-tincan_0 |awk '{n = split($0,a,","); print a[n],a[n-1]}'|grep 2016-08-31 |sort >> 0_ka
+grep '"appId":"Mastering"' seer-tincan_3 |awk '{n = split($0,a,","); print a[n],a[n-1]}'|grep 2016-08-31 |sort >> 3_ka
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer_tincan_3 104067781 105352562 3
+/usr/lib/jvm/java-8-oracle/bin/java -jar prodKafkaClient.jar seer-tincan_4 104084359 104778208 4

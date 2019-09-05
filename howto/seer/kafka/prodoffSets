@@ -1,0 +1,32 @@
+August 03
+root@prd-use1b-pr-04-firehose-kamq-0004:/opt/kafka# ./bin/kafka-run-class.sh kafka.tools.ConsumerOffsetChecker --group test --zkconnect 10.198.14.80:2181 --topic seer-tincan
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         99624052        98363262        none
+test            seer-tincan                    1   1225956         98736080        97510124        none
+test            seer-tincan                    2   1293562         99089972        97796410        none
+test            seer-tincan                    3   1274995         99819005        98544010        none
+test            seer-tincan                    4   1259670         99398353        98138683        none
+
+
+Thu Aug 11 04:02:35 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         100315510       99054720        none
+test            seer-tincan                    1   1225956         99452918        98226962        none
+test            seer-tincan                    2   1293562         99836383        98542821        none
+test            seer-tincan                    3   1274995         100541144       99266149        none
+test            seer-tincan                    4   1259670         100133151       98873481        none
+
+Thu Aug 11 09:01:16 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         100326860       99066070        none
+test            seer-tincan                    1   1225956         99462427        98236471        none
+test            seer-tincan                    2   1293562         99845028        98551466        none
+test            seer-tincan                    3   1274995         100549475       99274480        none
+test            seer-tincan                    4   1259670         100144180       98884510        none
+Thu Aug 11 09:02:27 UTC 2016
+Group           Topic                          Pid Offset          logSize         Lag             Owner
+test            seer-tincan                    0   1260790         100326908       99066118        none
+test            seer-tincan                    1   1225956         99462443        98236487        none
+test            seer-tincan                    2   1293562         99845036        98551474        none
+test            seer-tincan                    3   1274995         100549499       99274504        none
+test            seer-tincan                    4   1259670         100144215       98884545        none

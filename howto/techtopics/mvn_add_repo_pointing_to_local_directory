@@ -1,0 +1,15 @@
+    
+    		<!-- Use this repo definition if you have non-maven dependencies you want 
+			included in a lib folder -->
+		<repository>
+			<id>lib</id>
+			<name>lib</name>
+			<releases>
+				<enabled>true</enabled>
+				<checksumPolicy>ignore</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<url>file://${project.basedir}/lib</url>
+		</repository>

@@ -1,0 +1,39 @@
+curl -XGET 'http://prd-use1b-pr-29-subpublog-01x00x00-0003.prv-openclass.com:9200/logstash-2016.07.25/_search?pretty' -d '{
+  "facets": {
+    "0": {
+      "date_histogram": {
+        "field": "@timestamp",
+        "interval": "1h"
+      },
+      "global": true,
+      "facet_filter": {
+        "fquery": {
+          "query": {
+            "filtered": {
+              "query": {
+                "query_string": {
+                  "query": "*"
+                }
+              },
+              "filter": {
+                "bool": {
+                  "must": [
+                    {
+                      "terms": {
+                        "return.raw": [
+                         "MESSAGE-DISCARDED-NO-SUBSCRIBERS"
+                        ]
+                      }
+                    }
+                    
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "size": 0
+}'
